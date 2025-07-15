@@ -6,16 +6,16 @@
       <!-- 汇总卡片 -->
       <div class="summary-card lazy-card">
         <div class="summary-item">
-          <div class="amount income">¥{{ formatAmount(summaryData.monthlyIncome) }}</div>
+          <div class="amount income">{{ formatAmount(summaryData.monthlyIncome) }}</div>
           <div class="label">本月收入</div>
         </div>
         <div class="summary-item">
-          <div class="amount expense">¥{{ formatAmount(summaryData.monthlyExpense) }}</div>
+          <div class="amount expense">{{ formatAmount(summaryData.monthlyExpense) }}</div>
           <div class="label">本月支出</div>
         </div>
         <div class="summary-item">
           <div class="amount balance" :class="{ 'negative': summaryData.monthlyBalance < 0 }">
-            {{ summaryData.monthlyBalance < 0 ? '-' : '' }}¥{{ formatAmount(Math.abs(summaryData.monthlyBalance)) }}
+            {{ formatAmount(summaryData.monthlyBalance) }}
           </div>
           <div class="label">本月结余</div>
         </div>
@@ -53,7 +53,7 @@
               <div class="record-date">{{ formatDate(record.date) }}</div>
             </div>
             <div class="record-amount" :class="record.type">
-              {{ record.type === 'income' ? '+' : '-' }}¥{{ formatAmount(record.amount) }}
+              {{ record.type === 'income' ? '+' : '-' }}{{ formatAmount(record.amount) }}
             </div>
           </div>
           <div class="view-all" @click="goToRecords">
@@ -96,7 +96,7 @@ import Loading from '@/components/common/Loading.vue'
 import { useLazyLoad } from '@/composables/useLazyLoad'
 import { RecordRepository } from '@/services/database/repositories/RecordRepository'
 import { CategoryRepository } from '@/services/database/repositories/CategoryRepository'
-import { formatMoney } from '@/utils/number'
+import { formatAmount as formatAmountUtil } from '@/utils/number'
 import { formatDateString } from '@/utils/date'
 
 const router = useRouter()
@@ -171,7 +171,7 @@ const loadMonthlySummary = async () => {
 
 // 格式化金额
 const formatAmount = (amount: number) => {
-  return formatMoney(amount / 100) // 假设数据库存储的是分
+  return formatAmountUtil(amount) // 直接使用工具函数，数据库存储的是分
 }
 
 // 格式化日期
