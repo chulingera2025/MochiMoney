@@ -167,11 +167,11 @@
             <van-icon name="arrow" class="copy-icon" />
           </div>
 
-          <div class="contact-item" @click="copyToClipboard('https://github.com/chulingera2025')">
+          <div class="contact-item" @click="copyToClipboard('https://github.com/chulingera2025/MochiMoney')">
             <van-icon name="link-o" />
             <div class="contact-text">
               <div class="contact-label">Github地址</div>
-              <div class="contact-value">https://github.com/chulingera2025</div>
+              <div class="contact-value">https://github.com/chulingera2025/MochiMoney</div>
             </div>
             <van-icon name="arrow" class="copy-icon" />
           </div>
