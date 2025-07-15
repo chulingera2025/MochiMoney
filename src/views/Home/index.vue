@@ -15,7 +15,7 @@
         </div>
         <div class="summary-item">
           <div class="amount balance" :class="{ 'negative': summaryData.monthlyBalance < 0 }">
-            ¥{{ formatAmount(Math.abs(summaryData.monthlyBalance)) }}
+            {{ summaryData.monthlyBalance < 0 ? '-' : '' }}¥{{ formatAmount(Math.abs(summaryData.monthlyBalance)) }}
           </div>
           <div class="label">本月结余</div>
         </div>
@@ -48,6 +48,7 @@
             <div class="record-info">
               <div class="record-category">
                 {{ getCategoryIcon(record.categoryIcon) }} {{ record.categoryName }}
+                <span v-if="record.remark" class="record-remark">· {{ record.remark }}</span>
               </div>
               <div class="record-date">{{ formatDate(record.date) }}</div>
             </div>
@@ -343,6 +344,17 @@ onMounted(() => {
   font-weight: 500;
   color: var(--color-text-primary);
   margin-bottom: 2px;
+  display: flex;
+  align-items: center;
+}
+
+.record-remark {
+  color: var(--color-text-secondary);
+  font-weight: normal;
+  margin-left: var(--space-xs);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .record-date {
