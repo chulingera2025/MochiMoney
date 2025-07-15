@@ -1,0 +1,241 @@
+/* 主题兼容性修复 */
+
+/* 确保强制主题模式优先级高于媒体查询 */
+
+/* 深色模式强制覆盖 */
+[data-theme="dark"] {
+  /* 基础颜色变量 */
+  --van-nav-bar-background: var(--color-background-card) !important;
+  --van-nav-bar-title-color: var(--color-text-primary) !important;
+  --van-nav-bar-text-color: var(--color-primary) !important;
+  
+  /* Vant组件变量 */
+  --van-tabbar-background: var(--color-background-card) !important;
+  --van-tabbar-item-text-color: var(--color-text-secondary) !important;
+  --van-tabbar-item-active-color: var(--color-primary) !important;
+  --van-tabbar-item-active-background: transparent !important;
+  
+  /* 表单组件 */
+  --van-field-label-color: var(--color-text-primary) !important;
+  --van-field-input-text-color: var(--color-text-primary) !important;
+  --van-field-placeholder-text-color: var(--color-text-light) !important;
+  
+  /* 按钮组件 */
+  --van-button-default-background: var(--color-background-light) !important;
+  --van-button-default-color: var(--color-text-primary) !important;
+  --van-button-default-border-color: var(--color-border) !important;
+  
+  /* 单元格组件 */
+  --van-cell-background: var(--color-background-card) !important;
+  --van-cell-text-color: var(--color-text-primary) !important;
+  --van-cell-label-color: var(--color-text-secondary) !important;
+  --van-cell-value-color: var(--color-text-secondary) !important;
+  --van-cell-border-color: var(--color-border) !important;
+  
+  /* 弹窗组件 */
+  --van-popup-background: var(--color-background-card) !important;
+  --van-dialog-background: var(--color-background-card) !important;
+  --van-action-sheet-background: var(--color-background-card) !important;
+  --van-action-sheet-item-background: var(--color-background-card) !important;
+  --van-action-sheet-item-text-color: var(--color-text-primary) !important;
+  
+  /* 选择器组件 */
+  --van-picker-background: var(--color-background-card) !important;
+  --van-picker-option-text-color: var(--color-text-primary) !important;
+  --van-picker-loading-icon-color: var(--color-primary) !important;
+  
+  /* 下拉菜单组件 */
+  --van-dropdown-menu-background: var(--color-background-card) !important;
+  --van-dropdown-menu-title-text-color: var(--color-text-primary) !important;
+  --van-dropdown-menu-title-active-text-color: var(--color-primary) !important;
+  --van-dropdown-menu-option-text-color: var(--color-text-primary) !important;
+  --van-dropdown-menu-option-active-color: var(--color-primary) !important;
+  --van-dropdown-menu-content-background: var(--color-background-card) !important;
+  --van-dropdown-menu-box-shadow: var(--shadow-md) !important;
+  
+  /* 日历组件 */
+  --van-calendar-background: var(--color-background-card) !important;
+  --van-calendar-popup-background: var(--color-background-card) !important;
+  --van-calendar-header-title-color: var(--color-text-primary) !important;
+  --van-calendar-weekdays-color: var(--color-text-secondary) !important;
+  --van-calendar-month-title-color: var(--color-text-primary) !important;
+  --van-calendar-day-color: var(--color-text-primary) !important;
+  --van-calendar-day-disabled-color: var(--color-text-light) !important;
+  --van-calendar-range-edge-background: var(--color-primary) !important;
+  --van-calendar-range-middle-background: rgba(25, 137, 250, 0.1) !important;
+}
+
+/* 浅色模式强制覆盖 */
+[data-theme="light"] {
+  /* 基础颜色变量 */
+  --van-nav-bar-background: var(--color-background-card) !important;
+  --van-nav-bar-title-color: var(--color-text-primary) !important;
+  --van-nav-bar-text-color: var(--color-primary) !important;
+  
+  /* Vant组件变量 */
+  --van-tabbar-background: var(--color-background-card) !important;
+  --van-tabbar-item-text-color: var(--color-text-secondary) !important;
+  --van-tabbar-item-active-color: var(--color-primary) !important;
+  --van-tabbar-item-active-background: transparent !important;
+  
+  /* 表单组件 */
+  --van-field-label-color: var(--color-text-primary) !important;
+  --van-field-input-text-color: var(--color-text-primary) !important;
+  --van-field-placeholder-text-color: var(--color-text-light) !important;
+  
+  /* 按钮组件 */
+  --van-button-default-background: var(--color-background-light) !important;
+  --van-button-default-color: var(--color-text-primary) !important;
+  --van-button-default-border-color: var(--color-border) !important;
+  
+  /* 单元格组件 */
+  --van-cell-background: var(--color-background-card) !important;
+  --van-cell-text-color: var(--color-text-primary) !important;
+  --van-cell-label-color: var(--color-text-secondary) !important;
+  --van-cell-value-color: var(--color-text-secondary) !important;
+  --van-cell-border-color: var(--color-border) !important;
+  
+  /* 弹窗组件 */
+  --van-popup-background: var(--color-background-card) !important;
+  --van-dialog-background: var(--color-background-card) !important;
+  --van-action-sheet-background: var(--color-background-card) !important;
+  --van-action-sheet-item-background: var(--color-background-card) !important;
+  --van-action-sheet-item-text-color: var(--color-text-primary) !important;
+  
+  /* 选择器组件 */
+  --van-picker-background: var(--color-background-card) !important;
+  --van-picker-option-text-color: var(--color-text-primary) !important;
+  --van-picker-loading-icon-color: var(--color-primary) !important;
+  
+  /* 下拉菜单组件 */
+  --van-dropdown-menu-background: var(--color-background-card) !important;
+  --van-dropdown-menu-title-text-color: var(--color-text-primary) !important;
+  --van-dropdown-menu-title-active-text-color: var(--color-primary) !important;
+  --van-dropdown-menu-option-text-color: var(--color-text-primary) !important;
+  --van-dropdown-menu-option-active-color: var(--color-primary) !important;
+  --van-dropdown-menu-content-background: var(--color-background-card) !important;
+  --van-dropdown-menu-box-shadow: var(--shadow-md) !important;
+  
+  /* 日历组件 */
+  --van-calendar-background: var(--color-background-card) !important;
+  --van-calendar-popup-background: var(--color-background-card) !important;
+  --van-calendar-header-title-color: var(--color-text-primary) !important;
+  --van-calendar-weekdays-color: var(--color-text-secondary) !important;
+  --van-calendar-month-title-color: var(--color-text-primary) !important;
+  --van-calendar-day-color: var(--color-text-primary) !important;
+  --van-calendar-day-disabled-color: var(--color-text-light) !important;
+  --van-calendar-range-edge-background: var(--color-primary) !important;
+  --van-calendar-range-middle-background: rgba(25, 137, 250, 0.1) !important;
+}
+
+/* 特殊组件强制主题适配 */
+[data-theme="dark"] .van-nav-bar__title,
+[data-theme="light"] .van-nav-bar__title {
+  color: var(--color-text-primary) !important;
+}
+
+[data-theme="dark"] .van-tabbar-item__text,
+[data-theme="light"] .van-tabbar-item__text {
+  color: var(--color-text-secondary) !important;
+}
+
+[data-theme="dark"] .van-tabbar-item--active .van-tabbar-item__text,
+[data-theme="light"] .van-tabbar-item--active .van-tabbar-item__text {
+  color: var(--color-primary) !important;
+}
+
+/* Toast和通知组件的主题适配 */
+[data-theme="dark"] .van-toast,
+[data-theme="dark"] .van-notify {
+  background: var(--color-background-card) !important;
+  color: var(--color-text-primary) !important;
+}
+
+[data-theme="light"] .van-toast,
+[data-theme="light"] .van-notify {
+  background: var(--color-background-card) !important;
+  color: var(--color-text-primary) !important;
+}
+
+/* 强制下拉菜单主题适配 - 临时禁用 */
+/*
+[data-theme="dark"] .van-dropdown-menu,
+[data-theme="light"] .van-dropdown-menu {
+  background: var(--color-background-card) !important;
+}
+
+[data-theme="dark"] .van-dropdown-item,
+[data-theme="light"] .van-dropdown-item {
+  background: var(--color-background-card) !important;
+  color: var(--color-text-primary) !important;
+}
+
+[data-theme="dark"] .van-dropdown-item__title,
+[data-theme="light"] .van-dropdown-item__title {
+  color: var(--color-text-primary) !important;
+}
+
+[data-theme="dark"] .van-dropdown-item__icon,
+[data-theme="light"] .van-dropdown-item__icon {
+  color: var(--color-text-secondary) !important;
+}
+
+[data-theme="dark"] .van-dropdown-menu__content,
+[data-theme="light"] .van-dropdown-menu__content {
+  background: var(--color-background-card) !important;
+  border: 1px solid var(--color-border) !important;
+}
+
+[data-theme="dark"] .van-dropdown-menu__option,
+[data-theme="light"] .van-dropdown-menu__option {
+  color: var(--color-text-primary) !important;
+  background: var(--color-background-card) !important;
+}
+
+[data-theme="dark"] .van-dropdown-menu__option:hover,
+[data-theme="light"] .van-dropdown-menu__option:hover {
+  background: var(--color-background-light) !important;
+}
+
+[data-theme="dark"] .van-dropdown-menu__option--active,
+[data-theme="light"] .van-dropdown-menu__option--active {
+  color: var(--color-primary) !important;
+  background: var(--color-background-light) !important;
+}
+*/
+
+/* 强制日历组件主题适配 */
+[data-theme="dark"] .van-calendar,
+[data-theme="light"] .van-calendar {
+  background: var(--color-background-card) !important;
+}
+
+[data-theme="dark"] .van-calendar__popup,
+[data-theme="light"] .van-calendar__popup {
+  background: var(--color-background-card) !important;
+}
+
+[data-theme="dark"] .van-calendar__header-title,
+[data-theme="light"] .van-calendar__header-title {
+  color: var(--color-text-primary) !important;
+}
+
+[data-theme="dark"] .van-calendar__weekdays,
+[data-theme="light"] .van-calendar__weekdays {
+  color: var(--color-text-secondary) !important;
+}
+
+[data-theme="dark"] .van-calendar__month-title,
+[data-theme="light"] .van-calendar__month-title {
+  color: var(--color-text-primary) !important;
+}
+
+[data-theme="dark"] .van-calendar__day,
+[data-theme="light"] .van-calendar__day {
+  color: var(--color-text-primary) !important;
+}
+
+[data-theme="dark"] .van-calendar__day--disabled,
+[data-theme="light"] .van-calendar__day--disabled {
+  color: var(--color-text-light) !important;
+}

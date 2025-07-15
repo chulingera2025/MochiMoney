@@ -1,0 +1,151 @@
+/* 全局懒加载动画样式 */
+
+/* 页面内容区域渐入 */
+.lazy-content {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.lazy-content.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 列表项依次渐入 */
+.lazy-list .lazy-item {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.fade-in .lazy-list .lazy-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 为列表项添加延迟动画 */
+.fade-in .lazy-list .lazy-item:nth-child(1) { transition-delay: 0.05s; }
+.fade-in .lazy-list .lazy-item:nth-child(2) { transition-delay: 0.1s; }
+.fade-in .lazy-list .lazy-item:nth-child(3) { transition-delay: 0.15s; }
+.fade-in .lazy-list .lazy-item:nth-child(4) { transition-delay: 0.2s; }
+.fade-in .lazy-list .lazy-item:nth-child(5) { transition-delay: 0.25s; }
+.fade-in .lazy-list .lazy-item:nth-child(6) { transition-delay: 0.3s; }
+.fade-in .lazy-list .lazy-item:nth-child(7) { transition-delay: 0.35s; }
+.fade-in .lazy-list .lazy-item:nth-child(8) { transition-delay: 0.4s; }
+.fade-in .lazy-list .lazy-item:nth-child(9) { transition-delay: 0.45s; }
+.fade-in .lazy-list .lazy-item:nth-child(10) { transition-delay: 0.5s; }
+.fade-in .lazy-list .lazy-item:nth-child(11) { transition-delay: 0.55s; }
+.fade-in .lazy-list .lazy-item:nth-child(12) { transition-delay: 0.6s; }
+.fade-in .lazy-list .lazy-item:nth-child(13) { transition-delay: 0.65s; }
+.fade-in .lazy-list .lazy-item:nth-child(14) { transition-delay: 0.7s; }
+.fade-in .lazy-list .lazy-item:nth-child(15) { transition-delay: 0.75s; }
+
+/* 卡片组件渐入 */
+.lazy-card {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.fade-in .lazy-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 为卡片添加延迟动画 */
+.fade-in .lazy-card:nth-child(1) { transition-delay: 0.1s; }
+.fade-in .lazy-card:nth-child(2) { transition-delay: 0.2s; }
+.fade-in .lazy-card:nth-child(3) { transition-delay: 0.3s; }
+.fade-in .lazy-card:nth-child(4) { transition-delay: 0.4s; }
+.fade-in .lazy-card:nth-child(5) { transition-delay: 0.5s; }
+
+/* 统计图表渐入 */
+.lazy-chart {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+
+.fade-in .lazy-chart {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* 表单元素渐入 */
+.lazy-form {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.fade-in .lazy-form {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 按钮组渐入 */
+.lazy-buttons {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.fade-in .lazy-buttons {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 标签页内容渐入 */
+.lazy-tabs {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.fade-in .lazy-tabs {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* 移动端优化 - 减少动画强度 */
+@media (max-width: 768px) {
+  .lazy-content {
+    transform: translateY(10px);
+  }
+  
+  .lazy-list .lazy-item {
+    transform: translateY(5px);
+  }
+  
+  .lazy-card {
+    transform: translateY(8px);
+  }
+}
+
+/* 减少动画偏好设置 */
+@media (prefers-reduced-motion: reduce) {
+  .lazy-content,
+  .lazy-list .lazy-item,
+  .lazy-card,
+  .lazy-chart,
+  .lazy-form,
+  .lazy-buttons,
+  .lazy-tabs {
+    opacity: 0;
+    transform: none;
+    transition: opacity 0.2s ease-out;
+  }
+  
+  .fade-in .lazy-content,
+  .fade-in .lazy-list .lazy-item,
+  .fade-in .lazy-card,
+  .fade-in .lazy-chart,
+  .fade-in .lazy-form,
+  .fade-in .lazy-buttons,
+  .fade-in .lazy-tabs {
+    opacity: 1;
+    transform: none;
+    transition-delay: 0s;
+  }
+}
